@@ -10,10 +10,15 @@ class CategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(15),
-      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(2),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: this._bgColor),
+        borderRadius: BorderRadius.circular(10),
+        gradient: LinearGradient(colors: [
+          this._bgColor.withOpacity(0.7),
+          this._bgColor,
+        ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+      ),
       child: Text(this._title),
     );
   }
