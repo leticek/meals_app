@@ -15,11 +15,14 @@ class CategoryTile extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         gradient: LinearGradient(colors: [
-          this._bgColor.withOpacity(0.7),
+          this._bgColor.withOpacity(0.6),
           this._bgColor,
         ], begin: Alignment.topLeft, end: Alignment.bottomRight),
       ),
-      child: Text(this._title),
+      child: Text(
+        this._title,
+        style: Theme.of(context).textTheme.headline6,
+      ),
     );
   }
 }
