@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
+import 'package:meals_app/screens/meal_detail_screen.dart';
 
 import 'widgets/meal_tile_row_item.dart';
 
@@ -54,12 +55,15 @@ class MealTile extends StatelessWidget {
     }
   }
 
-  void _selectItem() {}
+  void _selectItem(BuildContext context) {
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.routeName, arguments: 'test');
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectItem,
+      onTap: () => _selectItem(context),
       splashColor: Theme.of(context).accentColor,
       child: Card(
         shape: RoundedRectangleBorder(
