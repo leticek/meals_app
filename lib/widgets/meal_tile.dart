@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/screens/meal_detail_screen.dart';
 
-import 'widgets/meal_tile_row_item.dart';
+import 'meal_tile_row_item.dart';
 
 class MealTile extends StatelessWidget {
+  final String id;
   final String title;
   final String imgUrl;
   final int duration;
@@ -12,6 +13,7 @@ class MealTile extends StatelessWidget {
   final Affordability affordability;
 
   const MealTile({
+    @required this.id,
     @required this.title,
     @required this.imgUrl,
     @required this.duration,
@@ -56,8 +58,7 @@ class MealTile extends StatelessWidget {
   }
 
   void _selectItem(BuildContext context) {
-    Navigator.of(context)
-        .pushNamed(MealDetailScreen.routeName, arguments: 'test');
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: id);
   }
 
   @override
