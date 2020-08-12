@@ -89,9 +89,13 @@ class _MyAppState extends State<MyApp> {
               availableMeals: this._availableMeals,
             ),
         MealDetailScreen.routeName: (_) => MealDetailScreen(
-            toggleFavorite: _toggleFavorite, isFavorite: _isFavorite),
-        SettingsScreen.routeName: (_) =>
-            SettingsScreen(saveFilter: _setFilter, filters: _filters),
+              toggleFavorite: _toggleFavorite,
+              isFavorite: _isFavorite,
+            ),
+        SettingsScreen.routeName: (_) => SettingsScreen(
+              saveFilter: _setFilter,
+              filters: _filters,
+            ),
       },
     );
   }
