@@ -6,7 +6,7 @@ import '../models/meal.dart';
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
 
-  Widget _buildSectioTitle(String title, BuildContext context) {
+  Widget _buildSectionTitle(String title, BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(
@@ -50,7 +50,7 @@ class MealDetailScreen extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-            _buildSectioTitle('Meal ingredients', context),
+            _buildSectionTitle('Meal ingredients', context),
             _buildContainer(
               ListView.builder(
                 itemBuilder: (context, index) {
@@ -69,7 +69,7 @@ class MealDetailScreen extends StatelessWidget {
                 itemCount: meal.ingredients.length,
               ),
             ),
-            _buildSectioTitle('Steps to make', context),
+            _buildSectionTitle('Steps to make', context),
             _buildContainer(
               ListView.builder(
                 itemCount: meal.steps.length,
